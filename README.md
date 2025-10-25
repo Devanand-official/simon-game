@@ -16,3 +16,4 @@ This project is perfect for showcasing JavaScript logic, sequencing, event handl
 - HTML
 - CSS
 - JavaScript
+ 
