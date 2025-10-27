@@ -1,3 +1,10 @@
+// Detect if device is mobile
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  $("#level-title").text("Tap Anywhere to Start");
+} else {
+  $("#level-title").text("Press Any Key to Start");
+}
+
 const buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
@@ -130,3 +137,14 @@ function startOver() {
 //   else{
 //     var wrong = new Audio(`sounds/wrong.mp3`);
 //   }
+
+// <---------------------------For Mobile----------------------------------->
+
+$("body").click(function (event) {
+  // If the clicked element is NOT a Simon button
+  if (!$(event.target).hasClass("btn") && !started) {
+    $("#level-title").text(`Level ${level}`);
+    nextSequence();
+    started = true;
+  }
+});
